@@ -1,0 +1,43 @@
+Zip Given Linked List From Ends
+
+Problem Statement:
+
+Given an integer singly linked list, zip it from its two ends. (Looking at the sample test case will make it more clear.)
+
+You have to do it in-place i.e. in the same linked list, with using only constant extra space. 
+
+Input Format:
+
+There is only one argument in input, denoting integer singly linked list.
+
+Output Format:
+
+Return zipped linked list.
+
+Constraints:
+
+0 <= size of linked list <= 100000 
+-2 * 10^9 <= value stored in any node <= 2 * 10^9
+
+
+Sample Test Case:
+
+
+Sample Input:
+
+
+
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> NULL
+
+
+
+Sample Output:
+
+
+
+1 -> 6 -> 2 -> 5 -> 3 -> 4 -> NULL
+
+
+
+(Other modification to try yourself for practice: zip two separate lists and unzip them back into original lists. i.e.
+unzip(zip(L1, L2)) should return L1 and L2.)

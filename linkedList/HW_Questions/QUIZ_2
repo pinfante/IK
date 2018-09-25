@@ -1,0 +1,42 @@
+Find Median Of Sorted Circular Singly Linked List
+
+Problem Statement:
+
+Given a pointer ptr to an arbitrary node of a sorted circular singly linked list L containing only even integers. You have to find the median value M of L.
+
+When even number of elements in L, then the median M is average of two middle elements. 
+
+Input Format:
+
+There is only one argument, ptr denoting a pointer to an arbitrary node of L.
+
+Output Format:
+
+Return one integer denoting the median M.
+
+Constraints:
+
+1 <= Number of nodes in linked list <= 10^5
+- 2 * 10^9 <= value contained in nodes <= 2 * 10^9 
+Value contained in nodes will be even number. (Hence when even number of elements in L, median M will be an integer. (even + even) / 2 = integer (aka, not float). So answer will always be integer (never float).)
+
+
+Sample Test Case:
+
+Sample Input:
+
+L: 2 -> 4 -> 6 -> 8 -> 10
+
+
+ptr: Pointer of the node containing value 4. 
+
+Sample Output:
+6
+
+Explanation:
+
+There are 5 nodes in L hence median M will be the value of 3rd node, which is 6. 
+
+Notes:
+
+Expected solution: Linear time complexity with constant extra space. 

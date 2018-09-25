@@ -1,0 +1,55 @@
+Find Intersection Of Two Singly Linked Lists
+
+Problem Statement:
+
+Given two singly linked lists L1 and L2 containing non-negative integers. You have to find the intersection of given linked lists if any.
+
+Intersection of two linked lists is the first common node (first node with the same address).
+
+Input Format:
+
+There are two arguments L1 and L2 denoting pointers to head of the linked lists.
+
+Output Format:
+
+If given linked lists intersects then return the value in the first node where intersection begins, else return -1.
+
+Constraints:
+
+0 <= value stored in nodes <= 10^9
+You are not allowed to modify the given linked lists.
+Let N1 denote number of nodes in L1 and N2 denote number of nodes in L2. Then 0 <= N1, N2 <= 10^5. 
+
+
+Sample Test Case:
+
+
+
+Sample Input:
+
+
+L1: 1 -> 2 -> 3 -> 4 -> 7 -> 8 -> 9 
+
+L2: 5 -> 6 -> 4 -> 7 -> 8 -> 9
+
+
+Sample Output:
+
+4
+
+
+
+Explanation:
+
+
+L1 and L2 intersects at node containing value 4.
+
+Notes:
+
+Expected solution: Linear time complexity, with constant extra space.
+
+Realize that when comparing two nodes, you should be comparing the addresses, and NOT values.
+
+For other languages simply write your solution (no need to read input and write output) assuming that you are given input 
+arguments mentioned in the input format. Your solution will be checked manually. Do not worry about input, output and testcases. 
+Just submit it. 
