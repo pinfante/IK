@@ -143,3 +143,24 @@ TEST_F(Test_Sorting, dutch_flag_sort)
 
 }
 
+TEST_F(Test_Sorting, nutsBolts)
+{
+	vector<int> nuts{10,20,5,1,70}, bolts{70,1,20,10,5};
+	sorting::nutsBolts(nuts, bolts);
+	EXPECT_THAT(nuts, Eq(bolts));
+}
+
+TEST_F(Test_Sorting, findZeroSum)
+{
+	vector<int> values{10,20,-30,1,2,-3,1,2,-3};
+	auto v{sorting::findZeroSum(values)};
+	EXPECT_THAT(v.size(), Eq(2));
+	EXPECT_THAT(v[0], Eq("-30,10,20"));
+	EXPECT_THAT(v[1], Eq("-3,1,2"));
+}
+
+TEST_F(Test_Sorting, sortCharacters)
+{
+	EXPECT_THAT(sorting::sortCharacters("zhrbacbgkx"), Eq("abbcghkrxz"));
+	EXPECT_THAT(sorting::sortCharacters("zhzrbabacbgkx"), Eq("aabbbcghkrxzz"));
+}

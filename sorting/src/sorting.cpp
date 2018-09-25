@@ -2,9 +2,14 @@
 #include <queue>
 #include <utility>
 #include <algorithm>
+#include <sstream>
+#include <unordered_set>
 
 using std::pair;
 using std::swap;
+using std::to_string;
+using std::ostringstream;
+using std::unordered_set;
 
 void sorting::quickSort(vector<int>& arr)
 {
@@ -78,7 +83,6 @@ void sorting::merge(vector<int>& arr, int beg, int mid, int end)
 	while(j < rsize)
 		arr[k++] = rv[j++];
 }
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 struct Element
@@ -187,3 +191,102 @@ string sorting::dutch_flag_sort(string&& balls)
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+vector<string> sorting::nutsBolts(vector<int>& nuts, vector<int>& bolts)
+{
+	nutsBolts(nuts, bolts, 0, nuts.size()-1);
+	vector<string> res;
+
+	for(size_t i{0}; i < nuts.size(); ++i)
+		res.push_back(to_string(nuts[i]) + " " + to_string(bolts[i]));
+
+	return res;
+}
+
+void sorting::nutsBolts(vector<int>& nuts, vector<int>& bolts, int st, int end)
+{
+	if(st >= end)return;
+	
+	int nIdx{partitionNutsBolts(nuts, st, end, bolts[st+(end-st)/2])};
+	partitionNutsBolts(bolts, st, end, nuts[nIdx]);
+	nutsBolts(nuts, bolts, st, nIdx-1);
+	nutsBolts(nuts, bolts, nIdx+1, end);
+}
+
+int sorting::partitionNutsBolts(vector<int>& v, int st, int end, int pivot)
+{
+	int i = st;
+	int temp1, temp2;
+	for (int j = st; j < end; j++)
+	{
+		if (v[j] < pivot){
+			temp1 = v[i];
+			v[i] = v[j];
+			v[j] = temp1;
+			i++;
+		} else if(v[j] == pivot){
+			temp1 = v[j];
+			v[j] = v[end];
+			v[end] = temp1;
+			j--;
+		}
+	}
+	temp2 = v[i];
+	v[i] = v[end];
+	v[end] = temp2;
+
+	return i;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+vector<string> sorting::findZeroSum(vector<int>& v)
+{
+	std::sort(v.begin(), v.end());
+	vector<string> res;
+	size_t n = v.size();
+
+	unordered_set<string> m_entries;
+
+	for(size_t i{0}; i < n-2; ++i)
+	{
+		size_t l{i+1}, r{n-1};
+		while(l < r)
+		{
+			long sum{v[i]+v[l]+v[r]};
+			if(sum == 0)
+			{
+				vector<int> sortRes{v[i], v[l], v[r]};
+				std::sort(sortRes.begin(), sortRes.end());
+				ostringstream ss;
+				ss << sortRes[0] << ',' << sortRes[1] << "," << sortRes[2];
+				auto it = m_entries.find(ss.str());
+				if(it == m_entries.end())
+				{
+					res.push_back(ss.str());
+					m_entries.insert(ss.str());
+				}
+				++l, --r;
+			}
+			else if(sum < 0)++l;
+			else --r;
+		}
+	}
+
+	return res;
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+string sorting::sortCharacters(string&& word)
+{
+	vector<size_t> res(256, 0);
+	for(const auto& ch : word)
+		res[static_cast<int>(ch)]++;
+
+	ostringstream ss;
+	for(size_t i{0}; i < res.size(); ++i)
+		if(res[i])
+			for(size_t j{0}; j < res[i]; ++j)
+				ss << static_cast<char>(i);
+
+	return ss.str();
+}
