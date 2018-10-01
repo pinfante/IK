@@ -1,0 +1,40 @@
+Generate All Subsets Of A Set
+
+Problem Statement:
+
+Given a set (string s containing only distinct lowercase letters ('a' - 'z')), you have to generate ALL possible subsets of it . 
+
+Note that empty set is always a subset of any set.
+
+Input Format:
+
+There is only one argument denoting string s.
+
+Output Format:
+
+Return array of strings containing ALL possible subsets of given string.
+
+You need not to worry about order of strings in your output array. Like for s = "a", arrays ["", "a"] and ["a", ""] 
+both will be accepted.
+
+Order of characters in any subset must be same as in the input string. For s = "xy", array ["", "x", "y", "xy"] 
+will be accepted, but ["", "x", "y", "yx"] will not be accepted. 
+
+Constraints:
+
+0 <= |s| <= 20
+s only contains distinct lowercase alphabetical letters ('a' - 'z').
+You have to return ALL possible subsets. 
+
+Sample Test Cases:
+
+Sample Input:
+
+"xy" 
+
+Sample Output:
+
+["", "x", "y", "xy"] 
+
+vector<string> generate_all_subsets(const string& s, string subStr, vector<string>& v, size_t i);
+

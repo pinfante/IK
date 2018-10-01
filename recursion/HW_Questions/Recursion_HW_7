@@ -1,0 +1,65 @@
+
+Calculate the diameter of a tree (not necessarily a binary tree). Diameter is the longest path between two leaves of a tree. A path is the sum total of all distances (weights) attached to all edges between two nodes. 
+
+
+
+In the examples below, a tree is represented in a specific notation. 
+
+
+
+e.g. "{0,1,{5,0}}" means:
+
+* it starts with root (0), which has one (1) child, which will follow in braces. 
+
+* Inside the braces, it says that the distance (weight) of reaching that first child is 5 and
+
+* that there are no more children after that (0)
+
+
+
+You can represent the tree however you like. This is just one convenient way. Other example test-cases:
+
+
+
+
+
+// One node - no diameter
+
+new TestCase("{0,0}", 0),
+
+// One leaf
+
+new TestCase("{0,1,{5,0}}", 5),
+
+// Still one leaf
+
+new TestCase("{0,1,{5,1,{4,1,{7,0}}}}", 16),
+
+// The diameter of the first son is the diameter of the tree
+
+new TestCase("{0,1,{5,2,{8,0},{7,0}}}", 15),
+
+// The diameter of the last son is the diameter of the tree
+
+new TestCase("{0,3,{1,2,{5,0},{7,0}},{1,2,{6,0},{5,0}},{1,2,{10,0},{9,0}}}", 19),
+
+// Now the diameter is between a leaf in the first son and a leaf in the third son
+
+new TestCase("{0,3,{5,2,{8,0},{7,0}},{5,2,{9,0},{8,0}},{5,2,{10,0},{9,0}}}", 29)
+
+
+
+
+
+Test-cases: Please hard-code inputs and present output to STDOUT. Ignore the failing dummy test-case.
+
+
+
+Solution:
+
+http://techieme.in/tree-diameter/ 
+
+OR http://www.geeksforgeeks.org/diameter-of-a-binary-tree/
+
+
+void diameter_of_a_tree(string tree, int ans);

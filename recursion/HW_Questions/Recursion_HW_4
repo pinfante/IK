@@ -1,0 +1,132 @@
+How Many Binary Search Trees With n Nodes?
+
+
+
+
+
+Problem Statement:
+
+
+
+Write a function that will return the number of binary search trees that can be constructed, with n nodes.
+
+
+
+You have to solve this problem using recursion. (There may be other ways of solving this problem, but for the purpose of this exercise, please use recursion only).
+
+
+
+Input Format:
+
+
+
+There is only one argument denoting integer n.
+
+
+
+Output Format:
+
+
+
+Return number of binary search trees that can be constructed, with n nodes.
+
+
+
+Constraints:
+
+
+
+1 <= n <= 35
+JavaScript can fail test cases from 31 to 35 due to precision limit, so if your answer is close to the expected answer, consider your solution as correct.
+
+
+Sample Test Cases:
+
+
+
+Sample Input 1:
+
+
+
+1
+
+
+
+Sample Output 1:
+
+
+
+1
+
+
+
+Explanation 1:
+
+
+
+1) root
+
+
+
+Sample Input 2:
+
+
+
+2
+
+
+
+Sample Output 2:
+
+
+
+2
+
+
+
+Explanation 2:
+
+
+
+1) root, root->left
+
+2) root, root->right
+
+
+
+Sample Input 3:
+
+
+
+3
+
+
+
+Sample Output 3:
+
+
+
+5
+
+
+
+Explanation 3:
+
+
+
+1) root, root->left, root->left->left
+
+2) root, root->left, root->left->right
+
+3) root, root->right, root->right->right
+
+4) root, root->right, root->right->left
+
+5) root, root->left, root->right
+
+
+
+If you keep doing this, it will form a series called Catalan numbers. One can simply lookup the formula for Catalan numbers and write code for it. But that's not how we want to do this. We want to do this by understanding the underlying recursion. The recursion is based on tree-topology only, as you can see by examples above, contents of the nodes of the tree do not matter.
+
+
+long long int how_many_BSTs(int n, unordered_map<int, long long>& cache);
