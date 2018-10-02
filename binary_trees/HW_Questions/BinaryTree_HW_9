@@ -1,0 +1,37 @@
+
+Reverse a general binary tree, i.e. flip it from right to left.
+
+So for example if we had the binary tree
+
+     6
+   /   \
+  3     4
+ / \   / \
+7   3 8   1
+Reversing it would create
+
+     6
+   /   \
+  4     3
+ / \   / \
+1   8 3   7
+
+
+
+
+Solution: http://stackoverflow.com/questions/9460255/reverse-a-binary-tree-left-to-right
+
+
+
+Funny/sad story: https://twitter.com/mxcl/status/608682016205344768
+
+
+
+
+
+Notes:
+
+Suggested time in interview: 20 minutes.
+
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
+

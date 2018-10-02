@@ -1,0 +1,33 @@
+Given the in-order and pre-order traversing results of a binary tree (as arrays), write a function to rebuild the tree. The function should return the pointer to the root node of the tree. Then take that pointer, and print your tree level by level (level order). Don't assume that these are BSTs. They are just general binary trees.
+
+
+
+Trivia: Generally speaking, one needs to be given in-order traversal (with either pre or post or level), as input, in order to re-construct a binary tree. Without in-order traversal given, it's not possible to re-construct a binary tree without ambiguity, even if all other 3 traversal orders are given. The only exception, is if we know something more about the tree e.g. if the binary tree is full and complete, then we can resolve the ambiguity without having to know the in-order traversal. [Something to read: http://www.geeksforgeeks.org/if-you-are-given-two-traversal-sequences-can-you-construct-the-binary-tree/]
+
+
+
+Solutions: 
+
+http://articles.leetcode.com/2011/04/construct-binary-tree-from-inorder-and-preorder-postorder-traversal.html
+
+http://edwardliwashu.blogspot.com/2013/01/construct-binary-tree-from-preorder-and.html
+
+https://www.youtube.com/watch?v=PAYG5WEC1Gs
+
+
+
+
+
+
+
+Notes:
+
+
+
+If your output and expected output looks similar, but still you are getting wrong answer, then check trailing spaces. In order to pass, your output must match expected output exactly.
+
+
+
+Suggested time in interview: 30 minutes
+
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.

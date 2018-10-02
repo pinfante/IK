@@ -1,0 +1,26 @@
+
+(Google question)
+
+
+
+Write a recursive function treeToList(Node root) that takes a BST and rearranges the internal pointers to make a circular doubly linked list out of the tree nodes. The "previous" pointers should be stored in the "Left" field and the "next" pointers should be stored in the "Right" field. The list should be arranged so that the nodes are in increasing order. Print the resulting linked list starting from its head node. (see test-case output to understand the formatting). The operation can be done in O(n) time.
+
+
+
+Solution: http://cslibrary.stanford.edu/109/TreeListRecursion.html
+
+
+
+
+
+Notes:
+
+
+
+If your output and expected output looks similar, but still you are getting wrong answer, then check trailing spaces. In order to pass, your output must match expected output exactly.
+
+
+
+Suggested time in interview: 40 minutes
+
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.

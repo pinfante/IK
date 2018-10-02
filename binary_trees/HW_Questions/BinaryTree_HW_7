@@ -1,0 +1,11 @@
+Write a function to traverse a Binary tree PostOrder, without using recursion. As you traverse, please print contents of the nodes.
+
+(Bonus: Spend 1 minute more and also do it with recursion)
+
+
+
+Note: If your output and expected output looks similar, but still you are getting wrong answer, then check trailing spaces. In order to pass, your output must match expected output exactly.
+
+
+
+Solution: https://www.youtube.com/watch?v=hv-mJUs5mvU

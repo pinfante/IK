@@ -1,0 +1,35 @@
+Merge two BSTs in O(N1 + N2) time, where N1 and N2 are number of nodes in the two trees respectively. The merged tree should contain all the elements of both trees and also be a balanced BST. Finally, return the root of the new tree (code stubs will print tree values using inorder traversal, you do not need to print anything). 
+
+
+
+e.g.
+
+Tree-1: 2->1,3
+
+Tree-2: 7->6,8
+
+Output:
+
+
+
+1 2 3 6 7 8
+
+
+
+The output above is a tree that's printed inorder.
+
+
+
+(This is a very good question. It's not hard at all, but will need you to write several functions: one to parse, one to sort, one to merge and one to reconstruct. Each of these can be separate short interview questions.)
+
+
+
+Solution: http://stackoverflow.com/questions/7540546/merging-2-binary-search-trees
+
+
+
+Notes:
+
+Suggested time in interview: 40 minutes
+
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.

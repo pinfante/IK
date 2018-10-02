@@ -1,0 +1,5 @@
+Given a binary tree, we need to count the number of unival subtrees (all nodes that have the same value). 
+
+e.g. Given the following tree, it has 6 unival subtrees.
+
+Solution: https://crazycoderzz.wordpress.com/count-the-number-of-unival-subtrees-in-a-binary-tree/

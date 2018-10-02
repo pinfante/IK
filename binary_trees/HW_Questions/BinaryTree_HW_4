@@ -1,0 +1,53 @@
+(Another popular interview problem)
+
+
+
+Let T be a rooted tree. The lowest common ancestor between two nodes n1 and n2 is defined as the lowest node in T that has both n1 and n2 as descendants. (For this problem, we allow a node to be an ancestor/descendant of itself.)
+
+
+
+The LCA of n1 and n2 in T is the shared ancestor of n1 and n2 that is located farthest from the root. Computation of lowest common ancestors may be useful, for instance, as part of a procedure for determining the distance between pairs of nodes in a tree: the distance from n1 to n2 can be computed as the distance from the root to n1, plus the distance from the root to n2, minus twice the distance from the root to their lowest common ancestor. (Source: Wikipedia)
+
+
+
+Design an write an algorithm to find the LCA node, given two nodes in a Binary Tree.
+
+* The tree may or may not be a BST
+
+* Assume a Node structure that has NO parent pointer
+
+* Assume that the two nodes are distinct and exist in the tree
+
+* Find a solution that has runtime complexity of O(N). N is # nodes in the tree.
+
+
+
+Test cases:
+
+
+Given the following tree:
+
+
+FindLCA(10,20) = 15
+
+FindLCA(50,80) = 65
+
+FindLCA(20,60) = 45
+
+
+
+Desired solution: O(N) time.
+
+
+
+Solution: http://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/
+
+
+
+
+
+Notes:
+
+Suggested time in interview: 30 minutes
+
+The “Suggested Time” is the time expected to complete this question during a real-life interview, not now in homework i.e. For the first attempt of a given homework problem, the focus should be to understand what the problem is asking, what approach you are using, coding it, as well as identifying any gaps that you can discuss during a TA session. Take your time, but limit yourself to 2 one hour sessions for most problems.
