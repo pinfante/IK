@@ -250,3 +250,270 @@ long llist::find_median(LinkedListNode* n)
 
 	return x1 + (x2 - x1)/2;
 }
+
+
+LinkedListNode* llist::find_middle_node(LinkedListNode* head)
+{
+	if(!head)return head;
+
+	int mid{0};
+	return find_middle_node(head, 1, mid);
+}
+
+LinkedListNode* llist::find_middle_node(LinkedListNode* n, int pos, int& mid)
+{
+	LinkedListNode* midNode{nullptr};
+
+	if(n->next)
+		midNode = find_middle_node(n->next, pos+1, mid);
+	else
+		mid = pos/2+1;
+
+	if(pos == mid)
+		return n;
+
+	return midNode;
+}
+
+int llist::getLen(LinkedListNode* n)
+{
+	if(!n)return 0;
+
+	size_t len{1};
+	while(n->next)
+	{
+		n = n->next;
+		++len;
+	}
+	return len;
+}
+
+LinkedListNode* llist::swap_nodes(LinkedListNode* head, int k)
+{
+	if(!head || !head->next || !k)return head;
+
+	int len = getLen(head);
+
+	if(k > len)return head;
+	if(2*k-1 == len)return head;
+
+	LinkedListNode* left{head}, *lprev{nullptr};
+	
+	for(int i{1}; i < k; ++i)
+	{
+		lprev = left;
+		left = left->next;
+	}
+
+	LinkedListNode* right{head}, *rprev{nullptr};
+
+	for(int i{len-k+1}; i > 1; --i)
+	{
+		rprev = right;
+		right = right->next;
+	}
+
+	if(lprev)
+		lprev->next = right;
+
+	if(rprev)
+		rprev->next = left;
+
+	LinkedListNode* lnext{left->next};
+	left->next = right->next;
+	right->next = lnext;
+
+	if(k == 1)
+		head = right;
+	if(k == len)
+		head = left;
+
+	return head;
+}
+
+LinkedListNode* llist::reverseList(LinkedListNode* head)
+{
+	auto tail = reverseList(head, head);
+	tail->next = nullptr;
+	return head;
+}
+
+LinkedListNode* llist::reverseList(LinkedListNode*& head, LinkedListNode* n)
+{
+	LinkedListNode* prev{nullptr};
+
+	if(n->next)
+		prev = reverseList(head, n->next);
+	else
+	{
+		head = n;
+		return n;
+	}
+
+	prev->next = n;
+	return n;		
+}
+
+LinkedListNode* llist::reverse_linked_list_in_groups_of_k(LinkedListNode* head, int k)
+{
+	int len{getLen(head)};
+	if(!len) return head;
+
+	if(k == len)
+	{
+		reverseList(head, head);
+		return head;
+	}
+
+	int iter{len/k};
+
+	if(len % k != 0)++iter;
+
+	LinkedListNode* curr{head->next}, *next{nullptr}, *prev{head}, *tail{nullptr}, *prevtail{nullptr};
+
+	for(int i{0}; i < iter; ++i)
+	{
+		for(int j{1}; j < k; ++j)
+		{
+			if(!curr)break;
+			
+			next = curr->next;
+			curr->next = prev;
+			prev = curr;
+			curr = next;
+		}
+
+		if(i+k == len)
+			break;
+		if(i == 0)
+		{
+			head->next = next;
+			tail = next;
+			prevtail = head;
+			head = prev;
+		}
+		else
+		{
+			prevtail->next = prev;
+			prevtail = tail;
+			tail->next = next;
+			tail = next;
+		}
+
+		if(!curr) break;
+		curr = next->next;
+		prev = next;
+	}
+
+	return head;
+}
+
+pair<LinkedListNode*, LinkedListNode*> llist::alternateSplit(LinkedListNode* head)
+{
+	if(!head)return make_pair(nullptr, nullptr);
+
+	LinkedListNode* list1{head}, *list2{head->next};
+
+	if(!list2)return make_pair(list1, list2);
+ 
+	LinkedListNode* l1{list1}, *l2{list2};
+	head = head->next->next;
+
+	size_t i{0};
+	while(head)
+	{
+		if(i % 2 == 0)
+		{
+			l1->next = head;
+			l1 = l2->next;
+		}
+		else
+		{
+			l2->next = head;
+			l2 = l2->next;
+		}
+
+		head = head->next;
+		++i;			
+	}
+
+	l1->next = nullptr;
+	l2->next = nullptr;
+
+	return make_pair(list1, list2);
+}
+
+LinkedListNode* llist::mergeSortList(LinkedListNode* head)
+{
+	if(head == nullptr || head->next == nullptr)
+		return head;
+
+	return mergeList(mergeSortList(head), mergeSortList(split(head)));
+}
+
+LinkedListNode* llist::mergeList(LinkedListNode* l, LinkedListNode* r)
+{
+	if(l && !r)return l;
+	if(r && !l)return r;
+	if(!l && !r)return l;
+
+	LinkedListNode* head{nullptr};
+	if(l->val < r->val)
+	{
+		head = l;
+		l = l->next;
+	}
+	else
+	{
+		head = r;
+		r = r->next;
+	}
+
+	LinkedListNode* curr{head};
+
+	while(l && r)
+	{
+		if(l->val < r->val)
+		{
+			curr->next = l;
+			l = l->next;
+		}
+		else
+		{
+			curr->next = r;
+			r = r->next;
+		}
+		curr = curr->next;
+	}
+
+	while(l)
+	{
+		curr->next = l;
+		curr = curr->next;
+		l = l->next;
+	}
+	while(r)
+	{
+		curr->next = r;
+		curr = curr->next;
+		r = r->next;
+	}
+	return head;
+}
+
+LinkedListNode* llist::split(LinkedListNode* head)
+{
+	if(!head || !head->next)return head; 
+
+	LinkedListNode* fast{head->next}, *slow{head};
+	while(fast->next && fast->next->next)
+	{
+		fast = fast->next->next;
+		slow = slow->next;
+	}
+
+	fast = slow->next;
+	slow->next = nullptr;
+	
+	return fast;
+}

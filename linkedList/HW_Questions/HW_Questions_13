@@ -1,0 +1,117 @@
+Reverse Given Linked List In Groups Of k
+
+
+
+
+
+Problem Statement:
+
+
+
+Given an integer singly linked list of size n and an integer k, you have to reverse every k nodes of the linked list.
+
+
+
+There are two cases possible:
+
+
+
+1) When n % k = 0: There will be n / k groups of size k. So, you have to reverse n / k groups of size k.
+
+
+
+2) When n % k != 0: There will be floor(n / k) groups of size k and one group of size n % k. So, you have to reverse floor(n / k) groups of size k and one group of size n % k. 
+
+
+
+(Looking at sample test cases will make it more clear.)
+
+
+
+Input Format:
+
+
+
+There are two arguments in input. First is an integer singly linked list and second is an integer k.
+
+
+
+Output Format:
+
+
+
+Return linked list after reversing it in groups of k. 
+
+
+
+Constraints:
+
+
+
+1 <= n <= 100000
+-2 * 10^9 <= value stored in any node <= 2 * 10^9
+1 <= k <= n
+Solve it with constant extra space.
+
+
+Sample Test Case:
+
+
+
+Sample Input 1:
+
+
+
+list: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> NULL
+
+k: 3
+
+
+
+Sample Output 1:
+
+ 
+
+3 -> 2 -> 1 -> 6 -> 5 -> 4 -> NULL
+
+
+
+Explanation 1:
+
+
+
+n = 6, k = 3 hence n % k = 0. So there are n / k = 6 / 3 = 2 groups of size k = 3. 
+
+
+
+Groups to be reversed are (1 -> 2 -> 3) and (4 -> 5 -> 6). 
+
+
+
+Sample Input 2:
+
+
+
+list: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> NULL
+
+k: 3
+
+
+
+Sample Output 2:
+
+ 
+
+3 -> 2 -> 1 -> 6 -> 5 -> 4 -> 8 -> 7-> NULL
+
+
+
+Explanation 2:
+
+
+
+n = 8, k = 3 hence n % k != 0, so there are floor(n / k) = floor(8 / 3) = 2 groups of size k = 3 and one group of size n % k = 8 % 3 = 2. 
+
+
+
+Groups to be reversed are (1 -> 2 -> 3), (4 -> 5 -> 6) and (7 -> 8). 
