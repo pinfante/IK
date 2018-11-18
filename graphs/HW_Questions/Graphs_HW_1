@@ -1,0 +1,90 @@
+Find Order Of Characters From Alien Dictionary
+
+
+
+Problem Statement:
+
+
+
+Given a sorted dictionary of an alien language. You have to find the order of characters in that language. 
+
+(This a popular interview problem)
+
+
+
+Input Format:
+
+
+
+There is only one argument, array of strings which denotes sorted dictionary of an alien language. 
+
+
+
+Output Format:
+
+
+
+Return a string denoting order of characters in the alien language. 
+
+
+
+Length of the output string will be the number of different characters present in input dictionary.  
+
+
+
+For more clarity see the sample test cases.
+
+
+
+Constraints:
+
+
+
+1 <= total number of characters in dictionary (not words) <= 10^5
+Character in any word will be lower case alphabet letter.
+Input will be such that it is possible to determine the order uniquely. 
+
+
+Sample Test Cases:
+
+
+
+Sample Input1:
+
+
+
+words = ["baa", "abcd", "abca", "cab", "cad"]
+
+
+
+Sample Output1:
+
+
+
+"bdac"
+
+
+
+Sample Input2:
+
+
+
+words = ["caa", "aaa", "aab"]
+
+
+
+Sample Output2:
+
+
+
+"cab"
+
+
+
+Notes:
+
+Here input is given such that it is possible to determine order uniquely. But in interview you should clarify these things with interviewer. Like if we are given words = ["z" "bc"] then we can only conclude that 'z' will come before 'b', but nothing about the order of 'c'! 
+
+
+
+string find_order(vector<string> words);

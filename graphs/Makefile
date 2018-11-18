@@ -1,4 +1,5 @@
 EXE = Tests
+RUN_TESTS = run_tests
 
 SRC_DIR = src
 OBJ_DIR = obj
@@ -11,10 +12,12 @@ LIBS = $(LIB_PATH)/libgtest.a $(LIB_PATH)/libgtest_main.a
 CPPFLAGS = -Iinclude -Wall -g3 -D DEBUG -std=c++17
 LDFLAGS =  -lgtest -lgtest_main -L/usr/lib -lpthread -lrt
 
-all: $(EXE)
+all: $(EXE) $(RUN_TESTS)
 
 $(EXE) : $(OBJ)
 	$(CPP) $(LDFLAGS) $^ $(LDFLAGS) $(LIBS) -o $@
+
+$(RUN_TESTS):
 	./Tests
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
