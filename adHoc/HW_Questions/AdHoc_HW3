@@ -1,0 +1,130 @@
+2D Array Search
+
+
+
+
+
+Problem Statement:
+
+
+
+You are given a sorted 2D array arr of size r*c, where all the numbers (integers) in the array are in increasing order from left to right
+
+and top to bottom. ( i.e. arr[i][j] <= arr[i+1][j] and arr[i][j] <= arr[i][j+1] for all i = 0,1,...,(r-2) and j = 0,1,...,(c-2) )
+
+Check if a given number x exists in it or not. You will have to answer q such queries.
+
+
+
+Input Format:
+
+
+
+There are two arguments, arr denoting input 2D array and x denoting the number as mentioned in problem statement.
+
+
+
+Output Format:
+
+
+
+Return string "present" if x is present in arr, string "not present" otherwise.
+
+
+
+Constraints:
+
+
+
+1 <= r <= 103
+1 <= c <= 103
+1 <= q <= 105
+-109 <= arr[i][j] <= 109, (i = 0,1,...,(r-1) and j = 0,1,...,(c-1))
+-109 <= x <= 109
+
+
+Sample Test Cases:
+
+
+
+Sample Input 1:
+
+
+
+3
+
+4
+
+1 2 3 12
+
+4 5 6 45
+
+7 8 9 78
+
+3
+
+6
+
+7
+
+23
+
+
+
+Sample Output 1:
+
+
+
+present
+
+present
+
+not present
+
+
+
+Explanation 1:
+
+
+
+Given number x=6 is present at arr[1][2] and x=7 is present at arr[2][0]. Hence, "present" returned for them, while
+
+x=23 is not present in arr, hence "not present" returned
+
+
+
+Sample Input 2:
+
+2
+
+2
+
+3 4
+
+5 10
+
+2
+
+12
+
+32
+
+
+
+Sample Output 2:
+
+
+
+not present
+
+not present
+
+
+
+Explanation 2:
+
+
+
+Given number x=12 and x=32 are not present in arr. Hence, "not present" returned for both of the queries
+
+string isPresent(const vector<vector<int>>& arr, int targ);

@@ -1,0 +1,64 @@
+Divide An Integer By Another Integer
+
+
+
+
+
+Problem Statement:
+
+
+
+Given two integers a and b. You have to find quotient q, when a is divided by b. 
+
+
+
+Input Format:
+
+
+
+Two integers a and b.
+
+
+
+Output Format:
+
+
+
+Quotient q of a/b.
+
+
+
+Constraints:
+
+
+
+-10^18 <= a, b <= 10^18
+b != 0
+You are not allowed to use division (/) operator.
+You are not allowed to use multiplication (*) operator.
+You are not allowed to use mod (%) operator.
+
+
+Sample Test Case:
+
+
+
+Sample Input:
+
+
+
+a = 5, b = 2
+
+
+
+Sample Output:
+
+
+
+2
+
+
+
+Notes:
+
+Here we have mentioned explicitly that b != 0, but in interview you should clarify this with the interviewer and handle the case accordingly. 

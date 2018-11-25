@@ -1,0 +1,131 @@
+Area under histogram
+
+
+
+
+
+Problem Statement:
+
+
+
+Find the largest rectangular area possible in a given histogram, where the largest rectangle can be made of a number of
+
+contiguous bars. For simplicity, assume that all bars have same width and the width is 1 unit.
+
+
+
+For example, consider the following histogram with 7 bars of heights {6, 2, 5, 4, 5, 1, 6}. The largest possible
+
+rectangle possible is 12 (see the below figure, the max area rectangle is highlighted in red).
+
+
+
+
+
+​
+
+You will be given an array arr of height of bars of size n. You have to answer q queries, where in each query, you will be 
+
+given left and right. For each query, return largest rectangular area possible in a histogram formed using
+
+(right-left+1) bars with array of heights as arr[left], arr[left+1], arr[left+2],...,arr[right].
+
+
+
+Input Format:
+
+
+
+There are three arguments: arr, denoting input array of height of bars, l denoting left and r denoting right as explained
+
+in problem statement
+
+
+
+Output Format:
+
+
+
+Return a number maxArea, denoting maximum area possible in a histogram formed as explained in problem statement
+
+
+
+Constraints:
+
+
+
+1 <= n <= 10^6
+
+1 <= q <= 100
+
+1 <= arr[i] <= 10^9, i=0,1,2,3,...,n-1
+
+
+
+Sample Test Cases:
+
+
+
+Sample Input 1:
+
+
+
+arr = [6, 2, 5, 4, 5, 1, 6]
+
+q = 1
+
+For 1st query: l = 0 and r = 6.
+
+
+
+Sample Output 1:
+
+
+
+12
+
+
+
+Explanation 1:
+
+
+
+* 1st query: A rectangle of area 12 can be formed using 2nd to 4th bar (0 base indexing) and has maximum area possible in
+
+histogram out of all possible rectangles that can be formed using contiguous bar.
+
+
+
+Sample Input 2:
+
+
+
+arr = [2, 4, 6, 5, 8]
+
+q = 2
+
+For 1st query: l = 0 and r = 4.
+
+For 2nd query: l = 3 and r = 3.
+
+
+
+Sample Output 2:
+
+
+
+16
+
+5
+
+
+
+Explanation 2:
+
+
+
+* 1st query: A rectangle of area 16 can be formed using 1st to 4th bar (0 base indexing) and has maximum area possible in
+
+histogram out of all possible rectangles that can be formed using contiguous bar.
+
+* 2nd query: A rectangle of area 5 can be formed using 3rd to 3rd bar (0 base indexing).

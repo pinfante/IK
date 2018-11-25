@@ -1,0 +1,72 @@
+Detect Prime Numbers
+
+
+
+
+
+Problem Statement:
+
+
+
+Given an integer array a of size N. For each integer in a we have to check if it is a prime number or not.
+
+
+
+Input Format:
+
+
+
+There is only one argument denoting integer array a.
+
+
+
+Output Format:
+
+
+
+Return a string of size N, where ith character of string contains ‘1’ if a[i] is a prime number else it should contain ‘0’. (1 is neither a prime nor a composite number, hence according to the previous statement, it should go in else part, i.e. ith character should contain '0', when a[i] = 1.)
+
+
+
+Constraints:
+
+
+
+1 <= a[i] <= 4 * 10^6
+1 <= N <= 3 * 10^5
+
+
+Sample Test Case:
+
+
+
+Sample Input:
+
+
+
+[6, 2, 5, 8]
+
+
+
+Sample Output:
+
+
+
+0110
+
+
+
+Explanation:
+
+
+
+6 is not a prime number. (6 = 2 * 3)
+
+2 is a prime number.
+
+5 is a prime number.
+
+8 is not a prime number. (8 = 2 * 4)
+
+
+string detect_primes(vector<int> a);
